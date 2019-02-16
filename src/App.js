@@ -10,7 +10,14 @@ class App extends Component {
     numberY: "",
     a: "0",
     b: "",
-    d: ""
+    d: "",
+    rectangleA: "",
+    rectangleB: "",
+    triangleA: "",
+    triangleB: "",
+    cubeWidth: "",
+    cubeLengh: "",
+    cubeHeight: ""
   };
 
   render() {
@@ -22,6 +29,13 @@ class App extends Component {
     let name = this.state.titleName;
     let numberX = this.state.numberX;
     let numberY = this.state.numberY;
+    let rectangleA = this.state.rectangleA;
+    let rectangleB = this.state.rectangleB;
+    let triangleA = this.state.triangleA;
+    let triangleB = this.state.triangleB;
+    let cubeWidth = this.state.cubeWidth;
+    let cubeLengh = this.state.cubeLengh;
+    let cubeHeight = this.state.cubeHeight;
 
     if (this.state.darkMode) {
       style = {
@@ -97,6 +111,56 @@ class App extends Component {
           }}
         />
         <h1>{a + b + d}</h1>
+        <hr />
+        <h1>Home Work 15-feb</h1>
+        Rectangle
+        <input
+          type="number"
+          onChange={event => {
+            this.setState({ rectangleA: +event.target.value });
+          }}
+        />
+        <input
+          type="number"
+          onChange={event => {
+            this.setState({ rectangleB: +event.target.value });
+          }}
+        />
+        <h3>{rectangleA * rectangleB}</h3>
+        Triangle
+        <input
+          type="number"
+          onChange={event => {
+            this.setState({ triangleA: +event.target.value });
+          }}
+        />
+        <input
+          type="number"
+          onChange={event => {
+            this.setState({ triangleB: +event.target.value });
+          }}
+        />
+        <h1>{(triangleA * triangleB) / 2}</h1>
+        Cube area
+        <input
+          type="number"
+          onChange={event => {
+            this.setState({ cubeWidth: +event.target.value });
+          }}
+        />
+        <input
+          type="number"
+          onChange={event => {
+            this.setState({ cubeLengh: +event.target.value });
+          }}
+        />
+        <input
+          type="number"
+          onChange={event => {
+            this.setState({ cubeHeight: +event.target.value });
+          }}
+        />
+        <h3>{cubeWidth * cubeLengh * cubeHeight}</h3>
       </div>
     );
   }
