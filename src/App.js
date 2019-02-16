@@ -17,7 +17,10 @@ class App extends Component {
     triangleB: "",
     cubeWidth: "",
     cubeLengh: "",
-    cubeHeight: ""
+    cubeHeight: "",
+    pi: "3.14",
+    area: "",
+    height: ""
   };
 
   render() {
@@ -36,6 +39,9 @@ class App extends Component {
     let cubeWidth = this.state.cubeWidth;
     let cubeLengh = this.state.cubeLengh;
     let cubeHeight = this.state.cubeHeight;
+    const pi = this.state.pi;
+    let area = this.state.area;
+    let height = this.state.height;
 
     if (this.state.darkMode) {
       style = {
@@ -113,13 +119,14 @@ class App extends Component {
         <h1>{a + b + d}</h1>
         <hr />
         <h1>Home Work 15-feb</h1>
-        Rectangle
+        <h4>Rectangle</h4> Width:
         <input
           type="number"
           onChange={event => {
             this.setState({ rectangleA: +event.target.value });
           }}
         />
+        Length:
         <input
           type="number"
           onChange={event => {
@@ -127,33 +134,38 @@ class App extends Component {
           }}
         />
         <h3>{rectangleA * rectangleB}</h3>
-        Triangle
+        <hr />
+        <h4>Triangle</h4> Width:
         <input
           type="number"
           onChange={event => {
             this.setState({ triangleA: +event.target.value });
           }}
         />
+        Length:
         <input
           type="number"
           onChange={event => {
             this.setState({ triangleB: +event.target.value });
           }}
         />
-        <h1>{(triangleA * triangleB) / 2}</h1>
-        Cube area
+        <h3>{(triangleA * triangleB) / 2}</h3>
+        <hr />
+        <h4>Cube area</h4> Width:
         <input
           type="number"
           onChange={event => {
             this.setState({ cubeWidth: +event.target.value });
           }}
         />
+        Length:{" "}
         <input
           type="number"
           onChange={event => {
             this.setState({ cubeLengh: +event.target.value });
           }}
         />
+        Height:
         <input
           type="number"
           onChange={event => {
@@ -161,6 +173,33 @@ class App extends Component {
           }}
         />
         <h3>{cubeWidth * cubeLengh * cubeHeight}</h3>
+        <hr />
+        <h4>Cylinder volume</h4>
+        Pi:
+        <input
+          type="number"
+          value="3.14"
+          onChange={event => {
+            this.setState({ pi: +event.target.value });
+          }}
+        />
+        Area:
+        <input
+          type="number"
+          value={this.state.area}
+          onChange={event => {
+            this.setState({ area: +event.target.value });
+          }}
+        />
+        Height:
+        <input
+          type="number"
+          value={this.state.height}
+          onChange={event => {
+            this.setState({ height: +event.target.value });
+          }}
+        />
+        <h4>{pi * (area ^ 2) * height}</h4>
       </div>
     );
   }
